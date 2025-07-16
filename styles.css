@@ -80,8 +80,17 @@ header {
 .link-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    gap: 12px;
+}
+
+.product-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
 }
 
 .link-title {
@@ -97,21 +106,35 @@ footer {
 
 .social-links {
     display: flex;
-    gap: 24px;
+    justify-content: center;
 }
 
-.social-icon {
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #1A0101;
+    text-decoration: none;
     transition: opacity 0.2s ease;
+    padding: 8px 16px;
+    background-color: #F6F3EB;
+    border-radius: 20px;
 }
 
-.social-icon:hover {
-    opacity: 0.7;
+.instagram-link:hover {
+    opacity: 0.8;
+    background-color: #ede6d9;
 }
 
-.social-icon svg {
+.instagram-icon {
     width: 24px;
     height: 24px;
+}
+
+.instagram-text {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Crimson Text', serif;
 }
 
 @media (max-width: 768px) {
