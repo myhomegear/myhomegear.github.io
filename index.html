@@ -17,46 +17,52 @@
             <p class="bio">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
         </header>
 
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="제품 검색 (예: 모기장, 물총, 접착제...)" class="search-input">
+            <button id="clearSearch" class="clear-button">✕</button>
+        </div>
+
         <main>
             <div class="links">
                 <a href="https://link.coupang.com/a/cEWJXE" class="link-button">
                     <div class="link-content">
-                        <img src="product-default.png" alt="Product" class="product-icon">
-                        <span class="link-title">Sorry! Access denied</span>
+                        <!-- <img src="coupang_favicon.ico" alt="Coupang" class="product-icon"> -->
+                        <img src="8543746966.png" alt="Coupang" class="product-icon">
+                        <span class="link-title">6. 아이스너겟</span>
                     </div>
                 </a>
 
                 <a href="https://link.coupang.com/a/cEflvV" class="link-button">
                     <div class="link-content">
-                        <img src="product-adhesive.png" alt="접착제" class="product-icon">
+                        <img src="8103234214.png" alt="Coupang" class="product-icon">
                         <span class="link-title">5. 몬스터 초강력 접착제</span>
                     </div>
                 </a>
 
                 <a href="https://link.coupang.com/a/cDAJN7" class="link-button">
                     <div class="link-content">
-                        <img src="product-waterproof.png" alt="방수제" class="product-icon">
+                        <img src="8187881659.png" alt="Coupang" class="product-icon">
                         <span class="link-title">4. 투명방수제</span>
                     </div>
                 </a>
 
                 <a href="https://link.coupang.com/a/cDp6Up" class="link-button">
                     <div class="link-content">
-                        <img src="product-contour.png" alt="컨투어게이지" class="product-icon">
+                        <img src="1831610416.png" alt="Coupang" class="product-icon">
                         <span class="link-title">3. 컨투어게이지</span>
                     </div>
                 </a>
 
                 <a href="https://link.coupang.com/a/cDpLTW" class="link-button">
                     <div class="link-content">
-                        <img src="product-watergun.png" alt="워터밤 전동물총" class="product-icon">
+                        <img src="8083187503.png" alt="Coupang" class="product-icon">
                         <span class="link-title">2. 워터밤 전동물총</span>
                     </div>
                 </a>
 
                 <a href="https://link.coupang.com/a/cDoFv4" class="link-button">
                     <div class="link-content">
-                        <img src="product-mosquito.png" alt="원터치 모기장" class="product-icon">
+                        <img src="6570176326.png" alt="Coupang" class="product-icon">
                         <span class="link-title">1. 원터치 모기장</span>
                     </div>
                 </a>
@@ -72,5 +78,46 @@
             </div>
         </footer>
     </div>
+    <script>
+        // 검색 기능
+        const searchInput = document.getElementById('searchInput');
+        const clearButton = document.getElementById('clearSearch');
+        const linkButtons = document.querySelectorAll('.link-button');
+        
+        // 검색 함수
+        function filterProducts() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            linkButtons.forEach(button => {
+                const title = button.querySelector('.link-title').textContent.toLowerCase();
+                
+                if (searchTerm === '' || title.includes(searchTerm)) {
+                    button.style.display = 'flex';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+            
+            // 검색어가 있을 때만 클리어 버튼 표시
+            clearButton.style.display = searchTerm ? 'block' : 'none';
+        }
+        
+        // 검색 입력 이벤트
+        searchInput.addEventListener('input', filterProducts);
+        
+        // 클리어 버튼 이벤트
+        clearButton.addEventListener('click', function() {
+            searchInput.value = '';
+            filterProducts();
+            searchInput.focus();
+        });
+        
+        // 엔터키 방지 (폼 제출 방지)
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
