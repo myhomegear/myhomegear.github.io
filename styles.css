@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EEE8DC;
+    color: #1A0101;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.profile-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    background-color: #F6F3EB;
+}
+
+.username {
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.bio {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-button {
+    width: 100%;
+    background-color: #F6F3EB;
+    border: none;
+    border-radius: 32px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: #1A0101;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.link-button:hover {
+    transform: scale(0.98);
+    background-color: #ede6d9;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.link-title {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Crimson Text', serif;
+}
+
+footer {
+    margin-top: 48px;
+    padding: 24px 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+}
+
+.social-icon {
+    color: #1A0101;
+    transition: opacity 0.2s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.7;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .links {
+        gap: 12px;
+    }
+    
+    .link-button {
+        padding: 16px 20px;
+        min-height: 56px;
+    }
+    
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    header {
+        margin-bottom: 32px;
+    }
+}
